@@ -27,8 +27,10 @@ public class InsuranceRestController {
 	@Autowired
 	private InsurancePlanService insuranceService;
 	
+	
 	@GetMapping("/plannames")
 	public ResponseEntity<List<String>> getPlanNames() {
+		System.out.println("getPlanNames()......");
 		List<String> planNames = insuranceService.getUniquePlanNames();
 		return new ResponseEntity<>(planNames, HttpStatus.OK);
 	}
